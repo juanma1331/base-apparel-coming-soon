@@ -1,0 +1,11 @@
+.hide-for-mobile {
+  @include apply-down(medium) {
+    display: hidden;
+  }
+}
+
+.hide-for-desktop {
+  @include apply-up(large) {
+    display: hidden;
+  }
+}

@@ -1,0 +1,106 @@
+.hero {
+  @include apply-up(large) {
+    display: grid;
+    grid-template-areas:
+      "logo image"
+      "intro image";
+  }
+
+  padding-bottom: 2em;
+  &__container {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+  &__logo {
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    grid-area: logo;
+
+    img {
+      width: 90px;
+    }
+  }
+
+  &__img {
+    grid-area: image;
+    @include apply-up(large) {
+      width: 600px;
+    }
+  }
+
+  &__intro {
+    margin-top: 2.5em;
+    grid-area: intro;
+  }
+
+  &__title {
+    text-align: center;
+
+    > span {
+      display: block;
+      font-size: 2.3rem;
+
+      &:first-child {
+        font-weight: $fontLight;
+        color: $desaturatedRed;
+      }
+
+      &:nth-child(2) {
+        max-width: 10ch;
+        margin: 0 auto;
+        font-weight: $fontBold;
+        color: $darkGrayishRed;
+      }
+    }
+  }
+
+  &__text {
+    max-width: 34ch;
+    text-align: center;
+    margin-top: 1.5em;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+    font-size: 0.8rem;
+    color: $desaturatedRed;
+  }
+
+  &__email-form {
+    width: 280px;
+    position: relative;
+    margin: 2em auto 0 auto;
+
+    input[type="email"],
+    button {
+      border: none;
+    }
+    input[type="email"]::placeholder {
+      color: $desaturatedRed;
+      font-family: "Josefin Sans";
+    }
+    input[type="email"] {
+      width: 100%;
+      height: 42px;
+      padding: 0.7em;
+      border: 1px solid $desaturatedRed;
+      border-radius: 50px;
+      color: $desaturatedRed;
+    }
+    input[type="email"]:focus {
+      outline: none;
+      border: 2px solid $desaturatedRed;
+    }
+    button {
+      height: 42px;
+      width: 60px;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+
+      border-radius: 50px;
+      background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    }
+  }
+}

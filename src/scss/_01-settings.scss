@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+
+/* Colors */
+$desaturatedRed: hsl(0, 36%, 70%);
+$softRed: hsl(0, 93%, 68%);
+$darkGrayishRed: hsl(0, 6%, 24%);
+
+/* Fonts */
+$fontLight: 300;
+$fontRegular: 400;
+$fontBold: 600;
+
+/* Breakpoints */
+$breakpoints-up: (
+  "medium": 4em,
+  "large": 64em,
+  "xlarge": 87.5em,
+);
+$breakpoints-down: (
+  "small": 39.9375em,
+  "medium": 63.9375em,
+  "large": 87.4375em,
+);
+
+/* Mixins */
+@mixin apply-up($size) {
+  @media (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
+}
+
+@mixin apply-down($size) {
+  @media (max-width: map-get($breakpoints-down, $size)) {
+    @content;
+  }
+}
