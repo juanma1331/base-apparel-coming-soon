@@ -28,12 +28,12 @@
     </style>
   </head>
   <body>
-    <section class="hero">
+    <section class="hero container">
       <div class="hero__logo hero__container">
         <img src="./src/images/logo.svg" alt="" />
       </div>
 
-      <img
+      <!-- <img
         class="hero__img hide-for-desktop"
         src="./src/images/hero-mobile.jpg"
         alt=""
@@ -42,11 +42,20 @@
         class="hero__img hide-for-mobile"
         src="./src/images/hero-desktop.jpg"
         alt=""
-      />
+      /> -->
+
+      <picture class="hero__img">
+        <source
+          srcset="./src/images/hero-desktop.jpg"
+          media="(min-width: 1024px)"
+          type="image/jpg"
+        />
+        <img src="./src/images/hero-mobile.jpg" alt="" />
+      </picture>
 
       <div class="hero__intro hero__container">
         <div class="hero__title">
-          <span>WE 'RE</span>
+          <span>WE ' RE</span>
           <span>COMING SOON</span>
         </div>
 
@@ -57,10 +66,16 @@
         </p>
 
         <form id="subscribe-form" action="" class="hero__email-form">
-          <input type="email" placeholder="Email Address" />
+          <input
+            id="email-input"
+            name="email"
+            type="email"
+            placeholder="Email Address"
+          />
           <button type="submit">
             <img src="./src/images/icon-arrow.svg" alt="" />
           </button>
+          <p id="email-error-msg">Please provide a valid email.</p>
         </form>
       </div>
     </section>

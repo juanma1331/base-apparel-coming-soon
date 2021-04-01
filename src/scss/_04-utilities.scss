@@ -1,11 +1,17 @@
+/* Container */
+.container {
+  max-width: map-get($breakpoints-up, xlarge);
+  margin: 0 auto;
+}
+
 .hide-for-mobile {
-  @include apply-down(medium) {
-    display: hidden;
+  @include apply-down(large) {
+    display: none;
   }
 }
 
 .hide-for-desktop {
-  @include apply-up(large) {
-    display: hidden;
+  @include apply-up(small) {
+    display: none;
   }
 }
